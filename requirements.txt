@@ -2,7 +2,8 @@ streamlit
 PyMuPDF
 python-docx
 langdetect
-spacy
+spacy==3.7.2
 reportlab
 plotly
 pandas
+en-core-web-sm==3.7.1
