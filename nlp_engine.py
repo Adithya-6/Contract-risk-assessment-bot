@@ -1,14 +1,8 @@
-
 import spacy
 import re
-import spacy
-from spacy.cli import download
 
-try:
-    nlp = spacy.load("en_core_web_sm")
-except:
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
+
 def classify_contract_type(text):
     text_lower = text.lower()
     if "employment" in text_lower:
