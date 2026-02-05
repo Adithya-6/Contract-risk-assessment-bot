@@ -1,7 +1,4 @@
-import spacy
 import re
-
-nlp = spacy.load("en_core_web_sm")
 
 def classify_contract_type(text):
     text_lower = text.lower()
@@ -15,19 +12,16 @@ def classify_contract_type(text):
         return "Vendor Contract"
     return "Service Agreement"
 
+
 def extract_clauses(text):
     clauses = re.split(r'\n|\.|;', text)
     return [c.strip() for c in clauses if len(c.strip()) > 40]
 
-def process_contract(text):
-    doc = nlp(text)
-    clauses = extract_clauses(text)
 
-    entities = {}
-    for ent in doc.ents:
-        entities.setdefault(ent.label_, []).append(ent.text)
+def process_contract(text):
+    clauses = extract_clauses(text)
 
     return {
         "clauses": clauses,
-        "entities": entities
+        "entities": {}
     }
