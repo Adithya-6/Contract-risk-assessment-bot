@@ -2,8 +2,6 @@ streamlit
 PyMuPDF
 python-docx
 langdetect
-spacy
 reportlab
 plotly
 pandas
-en-core-web-sm
